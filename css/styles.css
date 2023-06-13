@@ -5,7 +5,28 @@
   --primary-brand-color: #4d5ae5;
   --pressed-state-color: #404bbf;
   --light-color: #f4f4fd;
+  --accent-color: #e7e9fc;
 }
+
+/*----------скидання стилів-------- */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+/*-------------------------------- */
 
 body {
   font-family: "Roboto", sans-serif;
@@ -21,11 +42,40 @@ body {
   list-style-type: none;
 }
 
+.container {
+  width: 100%;
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+  outline: 2px solid red;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /*----------HEADER-------- */
 
 .header {
 }
+
+.header-container {
+  align-items: center;
+  display: flex;
+}
+
 .header-navigation {
+  align-items: center;
+  display: flex;
 }
 
 .header-logo {
@@ -35,9 +85,12 @@ body {
   font-size: 18px;
   line-height: 1.17;
   color: var(--primary-brand-color);
-
   letter-spacing: 0.03em;
   text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  margin-right: 76px;
 }
 
 .header-logo-span {
@@ -45,6 +98,8 @@ body {
 }
 
 .header-menu {
+  display: flex;
+  gap: 40px;
 }
 
 .header-menu-item {
@@ -56,8 +111,10 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--dark-color);
-
   letter-spacing: 0.02em;
+
+  display: block;
+  padding: 24px 0;
 }
 
 .header-menu-link:is(:hover, :focus) {
@@ -66,9 +123,12 @@ body {
 
 .header-address {
   font-style: normal;
+  margin-left: auto;
 }
 
 .header-address-list {
+  display: flex;
+  gap: 40px;
 }
 
 .header-address-item {
@@ -78,7 +138,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-color);
-
   letter-spacing: 0.02em;
 }
 
@@ -93,6 +152,11 @@ body {
 /*----------HERO--------- */
 .hero {
   background-color: var(--dark-color);
+  padding: 188px 0;
+}
+
+.hero-container {
+  max-height: 600px;
 }
 
 .hero-title {
@@ -103,6 +167,10 @@ body {
 
   letter-spacing: 0.02em;
   text-align: center;
+
+  max-width: 496px;
+  margin: 0 auto;
+  margin-bottom: 48px;
 }
 
 .hero-btn {
@@ -114,6 +182,12 @@ body {
   color: var(--white-background-color);
   background-color: var(--primary-brand-color);
   letter-spacing: 0.04em;
+
+  min-width: 169px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+  padding: 16px 32px;
 }
 
 .hero-btn:is(:hover, :focus) {
@@ -124,11 +198,16 @@ body {
 /*----------ADVANTAGES-------- */
 
 .advantages {
+  padding: 120px 0;
 }
 .advantages-list {
+  display: flex;
+  gap: 24px;
 }
 
 .advantages-item {
+  /* padding-left: 0; */
+  width: calc((100% - 72px) / 4);
 }
 
 .advantages-subtitle {
@@ -136,20 +215,21 @@ body {
   font-size: 20px;
   line-height: 1.2;
   color: var(--dark-color);
-
   letter-spacing: 0.02em;
+
+  margin-bottom: 8px;
 }
 .advantages-text {
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-color);
-
   letter-spacing: 0.02em;
 }
 
 /*----------SERVICES-------- */
 
 .services {
+  padding-bottom: 120px;
 }
 
 .services-title {
@@ -161,9 +241,14 @@ body {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   text-align: center;
+
+  margin-bottom: 72px;
 }
 
 .services-list {
+  display: flex;
+  gap: 24px;
+  width: calc((100% - 48px) / 3);
 }
 
 .services-item {
@@ -173,6 +258,7 @@ body {
 
 .team {
   background-color: var(--light-color);
+  padding: 120px 0;
 }
 .team-title {
   font-weight: 700;
@@ -183,13 +269,24 @@ body {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   text-align: center;
+
+  margin-bottom: 72px;
 }
 
 .team-list {
+  display: flex;
+  gap: 24px;
 }
 
 .team-item {
   background-color: var(--white-background-color);
+  width: calc((100% - 72px) / 4);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-member {
+  text-align: center;
+  padding: 32px 16px;
 }
 
 .team-subtitle {
@@ -197,15 +294,15 @@ body {
   font-size: 20px;
   line-height: 1.2;
   color: var(--dark-color);
-
   letter-spacing: 0.02em;
+
+  margin-bottom: 8px;
 }
 
 .team-text {
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-color);
-
   letter-spacing: 0.02em;
 }
 
@@ -213,6 +310,7 @@ body {
 
 .footer {
   background-color: var(--dark-color);
+  padding: 100px 0;
 }
 
 .footer-logo {
@@ -235,13 +333,23 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--light-color);
-
   letter-spacing: 0.02em;
+
+  max-width: 264px;
+  margin-top: 16px;
 }
 
 /*TODO----------PORTFOLIO-------- */
 
+.portfolio-section {
+  padding: 96px 0 120px 0;
+}
+
 .projects-btn-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 72px;
 }
 
 .projects-btn-item {
@@ -255,9 +363,20 @@ body {
   line-height: 1.5;
   color: var(--primary-brand-color);
   background-color: var(--light-color);
-
   text-align: center;
   letter-spacing: 0.04em;
+
+  /*? ----- навіщо це взагалі ??? ------ */
+  display: block;
+  margin: 0 auto;
+  /*?------------ */
+
+  /*?-------чому ЦЕ ВСЕ задається НЕ .btn-item, а .btn-text ??? */
+  border-radius: 4px;
+  padding: 12px 24px;
+  border: 1px solid var(--accent-color);
+  margin-top: 72px;
+  /*? ------------ */
 }
 
 .projects-btn-text:is(:hover, :focus) {
@@ -266,13 +385,24 @@ body {
   cursor: pointer;
 }
 
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px;
+}
+
+.projects-item {
+  width: calc((100% - 48px) / 3);
+}
+
 .projects-item-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   color: var(--dark-color);
-
   letter-spacing: 0.02em;
+
+  margin-bottom: 8px;
 }
 
 .projects-item-text {
@@ -281,4 +411,10 @@ body {
   color: var(--text-color);
 
   letter-spacing: 0.02em;
+}
+
+.border-text {
+  border: 1px solid var(--accent-color);
+  border-top: none;
+  padding: 32px 16px;
 }
