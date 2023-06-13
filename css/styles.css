@@ -26,6 +26,11 @@ ul {
   margin-bottom: 0;
   padding-left: 0;
 }
+
+/* ----added after 3.1-check ------*/
+img {
+  display: block;
+}
 /*-------------------------------- */
 
 body {
@@ -66,6 +71,8 @@ body {
 /*----------HEADER-------- */
 
 .header {
+  /* ----added after 3.1-check-----*/
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .header-container {
@@ -188,6 +195,11 @@ body {
   display: block;
   margin: 0 auto;
   padding: 16px 32px;
+
+  /* ----added after 3.1-check ----*/
+  height: 56px;
+  border: none;
+  cursor: pointer;
 }
 
 .hero-btn:is(:hover, :focus) {
@@ -248,10 +260,10 @@ body {
 .services-list {
   display: flex;
   gap: 24px;
-  width: calc((100% - 48px) / 3);
 }
 
 .services-item {
+  width: calc((100% - 48px) / 3);
 }
 
 /*----------TEAM-------- */
@@ -320,10 +332,16 @@ body {
   font-size: 18px;
   line-height: 1.17;
   color: var(--primary-brand-color);
-
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
+
+/* ----added after 3.1-check ----*/
+.footer-logo link {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+/* ------------------- */
 
 .footer-logo-span {
   color: var(--light-color);
@@ -372,6 +390,7 @@ body {
   /*?------------ */
 
   /*?-------чому ЦЕ ВСЕ задається НЕ .btn-item, а .btn-text ??? */
+  /* !---Тому що ми стилізуємо кнопки, а не елементи списку ! --- */
   border-radius: 4px;
   padding: 12px 24px;
   border: 1px solid var(--accent-color);
@@ -383,6 +402,9 @@ body {
   color: var(--white-background-color);
   background-color: var(--pressed-state-color);
   cursor: pointer;
+  /* ----added after 3.1-check ----*/
+  border: 1px solid transparent;
+  /* ------------------------ */
 }
 
 .projects-list {
@@ -415,6 +437,7 @@ body {
 
 .border-text {
   border: 1px solid var(--accent-color);
-  border-top: none;
   padding: 32px 16px;
+  /* ----- border всюди, крім верху ! ---- */
+  border-top: none;
 }
